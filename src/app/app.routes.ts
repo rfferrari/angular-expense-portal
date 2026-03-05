@@ -24,5 +24,5 @@ export const routes: Routes = [
     ]
   },
 
-  { path: '**', redirectTo: 'reimbursements' }, // ou crie uma NotFoundPage
+  { path: '**', redirectTo: 'reimbursements' },
 ];

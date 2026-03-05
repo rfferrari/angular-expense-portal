@@ -1,7 +1,8 @@
 <nav class="navbar">
-  <h2>Expense Portal</h2>
+  <a routerLink="/reimbursements">Expense Portal</a>
 
-  <div class="links">
-    <a routerLink="/reimbursements">Reembolsos</a>
+  <div class="right">
+    <span *ngIf="user() as u">{{ u.name }} ({{ u.role }})</span>
+    <button (click)="logout()">Sair</button>
   </div>
 </nav>
