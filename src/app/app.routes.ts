@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/auth/auth.guard';
+import { LayoutComponent } from './shared/layout/layout/layout.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'reimbursements' },
@@ -8,12 +9,19 @@ export const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./features/auth/auth.routes').then(m => m.AUTH_ROUTES),
   },
-
+  
   {
-    path: 'reimbursements',
+    path: '',
+    component: LayoutComponent,
     canMatch: [authGuard],
-    loadChildren: () =>
-      import('./features/reimbursements/reimbursements.routes').then(m => m.REIMBURSEMENTS_ROUTES),
+    children: [
+      {
+        path: 'reimbursements',
+        loadChildren: () =>
+          import('./features/reimbursements/reimbursements.routes')
+            .then(m => m.REIMBURSEMENTS_ROUTES)
+      }
+    ]
   },
 
   { path: '**', redirectTo: 'reimbursements' }, // ou crie uma NotFoundPage
