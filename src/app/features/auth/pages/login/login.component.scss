@@ -1,0 +1,14 @@
+form {
+    display: grid;
+    gap: 12px;
+    max-width: 360px;
+}
+
+input {
+    padding: 10px;
+}
+
+.hint {
+    opacity: .7;
+    font-size: 12px;
+}

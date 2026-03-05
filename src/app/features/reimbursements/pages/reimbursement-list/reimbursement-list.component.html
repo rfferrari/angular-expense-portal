@@ -1,2 +1,6 @@
 <h1>Reembolsos</h1>
-<p>Lista vai aqui.</p>
+<ul>
+  <li *ngFor="let r of reimbursements$ | async">
+    {{ r.title }} - {{ r.amount }}
+  </li>
+</ul>
