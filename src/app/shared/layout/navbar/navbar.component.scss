@@ -1,13 +1,59 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  background: #1976d2;
-  color: white;
+@import '../../../core/styles/colors';
+
+// Header
+.main-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+
+  .container-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    
+    .logo-icon {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 8px;
+      display: flex;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+  }
+
+  .user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .user-info {
+      text-align: right;
+      .email { display: block; font-weight: 600; font-size: 0.875rem; }
+      .role { font-size: 0.75rem; color: var(--text-muted); }
+    }
+
+    .v-divider { width: 1px; height: 32px; background: var(--border-color); }
+  }
 }
 
-.links a {
-  color: white;
-  text-decoration: none;
+.btn-logout {
+  background: white;
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
 }

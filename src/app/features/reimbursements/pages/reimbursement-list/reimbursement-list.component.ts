@@ -5,7 +5,13 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ReimbursementCreateComponent } from '../reimbursement-create/reimbursement-create.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import {MatChipsModule} from '@angular/material/chips';
+export type StatusFilter = 'PENDING' | 'APPROVED' | 'REJECTED' | null;
 @Component({
   selector: 'app-reimbursement-list',
   standalone: true,
@@ -14,6 +20,12 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatDialogModule,
     MatTableModule,
+    MatFormFieldModule,
+    OverlayModule,
+    MatCardModule,
+    MatSelectModule,
+    MatIconModule,
+    MatChipsModule
   ],
   templateUrl: './reimbursement-list.component.html',
   styleUrl: './reimbursement-list.component.scss'
@@ -21,6 +33,9 @@ import { MatTableModule } from '@angular/material/table';
 export class ReimbursementListComponent {
   displayedColumns: string[] = ['title', 'amount', 'date', 'status', 'actions'];
   private reimbursements$ = this.service.getAll();
+  isOpen = false;
+  isDropdownOpen = false;
+  activeFilter: StatusFilter = null;
 
   constructor(
     private service: ReimbursementsService,
@@ -49,17 +64,18 @@ export class ReimbursementListComponent {
     });
   }
 
-  getStatusColor(status: string): string {
-    switch (status) {
-      case 'APPROVED':
-        return 'green';
-      case 'REJECTED':
-        return 'red';
-      case 'PENDING':
-        return 'orange';
-      default:
-        return 'black';
+  filterByStatus(value: any) {
+    if (value === null) {
+      this.reimbursements$ = this.service.getAll();
+      return;
     }
+    this.reimbursements$ = this.service.getAllByStatus(value);
+  }
+
+  getStatusClass(status: string): string {
+    const baseClass = 'status-badge';
+    const modifier = `--${status.toLowerCase()}`;
+    return `${baseClass} ${modifier}`;
   }
 
   getStatusLabel(status: string): string {
@@ -73,5 +89,19 @@ export class ReimbursementListComponent {
       default:
         return status;
     }
+  }
+  
+  toggleDropdown(): void {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  applyFilter(status: StatusFilter): void {
+    this.activeFilter = status;
+    this.filterByStatus(this.activeFilter);
+    this.isDropdownOpen = false;
+  }
+
+  clearFilter(): void {
+    this.applyFilter(null);
   }
 }
