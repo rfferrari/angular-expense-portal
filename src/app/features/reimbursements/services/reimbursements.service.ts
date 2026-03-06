@@ -22,4 +22,12 @@ export class ReimbursementsService {
   getAll(): Observable<Reimbursement[]> {
     return this.http.get<Reimbursement[]>(this.api);
   }
+
+  create(data: Partial<Reimbursement>): Observable<Reimbursement> {
+    return this.http.post<Reimbursement>(this.api, data);
+  }
+
+  updateStatus(id: number, status: string): Observable<Reimbursement> {
+    return this.http.patch<Reimbursement>(`${this.api}/${id}`, { status });
+  }
 }

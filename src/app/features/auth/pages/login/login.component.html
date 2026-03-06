@@ -1,13 +1,12 @@
+<h1>Login</h1>
 
-    <h1>Login</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>
+    Email
+    <input type="email" formControlName="email" placeholder="ex: user@empresa.com" />
+  </label>
 
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <label>
-        Email
-        <input type="email" formControlName="email" placeholder="ex: user@empresa.com" />
-      </label>
+  <button type="submit" [disabled]="form.invalid">Entrar (fake)</button>
 
-      <button type="submit" [disabled]="form.invalid">Entrar (fake)</button>
-
-      <p class="hint">Dica: use "admin&#64;..." para entrar como ADMIN.</p>
-    </form>
+  <p class="hint">Dica: use "admin&#64;..." para entrar como ADMIN.</p>
+</form>
