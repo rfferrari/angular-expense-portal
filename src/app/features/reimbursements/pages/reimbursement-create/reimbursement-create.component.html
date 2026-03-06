@@ -1,0 +1,25 @@
+<div class="dialog-title" mat-dialog-title>
+    <h2>Criar Reembolso</h2>
+    <button mat-icon-button (click)="close()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<mat-dialog-content>
+    <form [formGroup]="form" class="reimbursement-form">
+        <mat-form-field>
+            <mat-label>Titulo</mat-label>
+            <input matInput type="text" formControlName="title" placeholder="ex: Reembolso de viagem" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Valor</mat-label>
+            <input matInput type="number" formControlName="amount" placeholder="ex: 100.00" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Data</mat-label>
+            <input matInput type="date" formControlName="date" />
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="onSubmit()" [disabled]="form.invalid" cdkFocusInitial>Criar Reembolso</button>
+</mat-dialog-actions>

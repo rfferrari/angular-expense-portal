@@ -1,18 +1,19 @@
 {
   "reimbursements": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Almoço cliente",
-      "amount": 85.50,
+      "amount": 85.5,
       "status": "PENDING",
       "date": "2024-03-10"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Uber reunião",
-      "amount": 42.30,
+      "amount": 42.3,
       "status": "APPROVED",
       "date": "2024-03-11"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
