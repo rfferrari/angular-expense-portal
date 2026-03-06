@@ -1,27 +1,80 @@
-# AngularExpensePortal
+# Angular Expense Portal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+Simulação de um portal de gestão de despesas e reembolsos desenvolvido com **Angular 17**, **Angular Material** e **TypeScript**. A aplicação permite que usuários gerenciem suas solicitações de reembolso com funcionalidades de filtro, aprovação e rejeição de requisições.
+Inclui autenticação fake, gestão de solicitações e integração com API mockada utilizando json-server.
 
-## Development server
+## 📋 Sobre o Projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+O **Angular Expense Portal** é uma aplicação web moderna que facilita:
+- Visualização de solicitações de reembolso em uma tabela interativa
+- Filtro dinâmico de status (Pendente, Aprovado, Rejeitado)
+- Aprovação e rejeição de reembolsos pendentes
+- Interface responsiva e intuitiva com Material Design
+- Autenticação de usuários com navbar personalizável
 
-## Code scaffolding
+## 🛠️ Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular** v17.0.5
+- **Angular Material** (Tabelas, Botões, Ícones, Overlays)
+- **TypeScript**
+- **json-server** (mock API)
+- **SCSS** (com variáveis de tema)
+- **RxJS** (Reactive Programming)
+- **Karma** (Unit Testing)
 
-## Build
+## 📁 Estrutura do Projeto
+src/
+├── app/
+│ ├── core/
+│ │ ├── guards/
+│ │ └── styles/
+│ │ └── _colors.scss
+│ ├── features/
+│ │ ├── reimbursements/
+│ │ │ ├── pages/
+│ │ │ │ └── reimbursement-list/
+│ │ │ │ ├── reimbursement-list.component.html
+│ │ │ │ ├── reimbursement-list.component.ts
+│ │ │ │ └── reimbursement-list.component.scss
+│ │ │ └── services/
+│ ├── shared/
+│ │ ├── layout/
+│ │ │ ├── navbar/
+│ │ │ │ ├── navbar.component.html
+│ │ │ │ ├── navbar.component.ts
+│ │ │ │ └── navbar.component.scss
+│ └── app.component.ts
+├── assets/
+└── styles/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Como Executar o Projeto
 
-## Running unit tests
+### Pré-requisitos
+- **Node.js** v18+ instalado
+- **Angular CLI** v17+ instalado globalmente
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install -g @angular/cli
+npm install
+npm run mock-api
+npm start
+```
 
-## Running end-to-end tests
+## 🎯 Funcionalidades Principais
+Página de Reembolsos
+- Tabela de Dados: Exibe lista de reembolsos com colunas de Título, Valor, Data e Status
+- Filtro de Status: Dropdown dinâmico para filtrar por status (Pendente, Aprovado, Rejeitado)
+- Ações Contextuais: Botões de Aprovar/Rejeitar disponíveis apenas para reembolsos pendentes
+- Inserir Reembolso: Botão flutuante para criar novo reembolso
+Navbar
+- Logo e Marca: Identificação visual da aplicação
+- Informações do Usuário: Email e função exibidos no header
+- Botão de Logout: Desconexão da aplicação
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🔒 Autenticação
+A aplicação inclui guards para proteger rotas. Implemente a autenticação conforme necessário em src/app/core/guards/.
 
-## Further help
+## 📄 Licença
+Este projeto é de uso interno.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Desenvolvido usando Angular 17
