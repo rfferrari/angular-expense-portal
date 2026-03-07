@@ -1,6 +1,8 @@
-<div class="dialog-title" mat-dialog-title>
-    <h2>Criar Reembolso</h2>
-    <button mat-icon-button (click)="close()">
+<div class="page-header" mat-dialog-title>
+    <div>
+        <h2 class="title">Criar Reembolso</h2>
+    </div>
+    <button class="btn-close" (click)="close()">
         <mat-icon>close</mat-icon>
     </button>
 </div>
@@ -21,5 +23,5 @@
     </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-button (click)="onSubmit()" [disabled]="form.invalid" cdkFocusInitial>Criar Reembolso</button>
+    <button mat-button class="btn-add" (click)="onSubmit()" [disabled]="form.invalid" cdkFocusInitial>Criar Reembolso</button>
 </mat-dialog-actions>

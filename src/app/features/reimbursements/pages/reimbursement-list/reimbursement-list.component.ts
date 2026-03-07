@@ -47,7 +47,11 @@ export class ReimbursementListComponent {
   }
 
   create() {
-    this.dialog.open(ReimbursementCreateComponent)
+    this.dialog.open(ReimbursementCreateComponent, {
+      width: '400px',
+      disableClose: true
+     }
+    )
       .afterClosed()
       .subscribe(() => this.reimbursements$ = this.service.getAll());
   }
