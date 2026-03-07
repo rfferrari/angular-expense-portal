@@ -74,7 +74,17 @@ Navbar
 ## 🔒 Autenticação
 A aplicação inclui guards para proteger rotas. Implemente a autenticação conforme necessário em src/app/core/guards/.
 
+### Mock API
+
+Durante o desenvolvimento foi utilizado json-server para simular uma API REST.
+
+Para a versão publicada no Netlify, os dados são servidos através de arquivos JSON em /assets/mock.
+
 ## 📄 Licença
 Este projeto é de uso interno.
 
 Desenvolvido usando Angular 17
+
+## Deploy do projeto
+
+https://inspiring-cannoli-964e62.netlify.app/
