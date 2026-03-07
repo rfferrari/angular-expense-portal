@@ -1,8 +1,22 @@
-<nav class="navbar">
-  <a routerLink="/reimbursements">Expense Portal</a>
+<header class="main-header">
+  <div class="container-wrapper">
+    <div class="brand">
+      <div class="logo-icon">
+        <mat-icon>payments</mat-icon>
+      </div>
+      <span class="brand-name">Expense Portal</span>
+    </div>
 
-  <div class="right">
-    <span *ngIf="user() as u">{{ u.name }} ({{ u.role }})</span>
-    <button (click)="logout()">Sair</button>
+    <div class="user-actions">
+      <div class="user-info" *ngIf="user() as u">
+        <span class="email">{{ u.name }}</span>
+        <span class="role">{{ u.role }}</span>
+      </div>
+      <div class="v-divider"></div>
+      <button class="btn-logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Sair</span>
+      </button>
+    </div>
   </div>
-</nav>
+</header>

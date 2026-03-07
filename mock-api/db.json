@@ -13,6 +13,13 @@
       "amount": 42.3,
       "status": "APPROVED",
       "date": "2024-03-11"
+    },
+    {
+      "id": "df63",
+      "title": "Passagem Aerea",
+      "amount": 3000,
+      "date": "2026-03-06",
+      "status": "REJECTED"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

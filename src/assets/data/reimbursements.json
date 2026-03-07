@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "title": "Almoço cliente",
+    "amount": 85.5,
+    "status": "PENDING",
+    "date": "2026-03-01"
+  },
+  {
+    "id": "2",
+    "title": "Uber reunião",
+    "amount": 42.3,
+    "status": "APPROVED",
+    "date": "2026-03-03"
+  },
+  {
+    "id": "df63",
+    "title": "Passagem Aerea",
+    "amount": 3000,
+    "date": "2026-03-06",
+    "status": "REJECTED"
+  }
+]

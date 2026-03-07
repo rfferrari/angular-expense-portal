@@ -1,12 +1,54 @@
-<h1>Login</h1>
+<div class="login-wrapper">
+  <header class="main-header">
+    <div class="header-content">
+      <div class="brand">
+        <div class="logo-box">
+          <mat-icon class="logo-icon">rocket_launch</mat-icon>
+        </div>
+        <h2>Empresa</h2>
+      </div>
+    </div>
+  </header>
+  <main class="login-container">
+    <div class="login-card">
+      <div class="card-body">
+        <div class="login-intro">
+          <h1>Login</h1>
+          <p>Bem-vindo de volta! Por favor, insira seus dados.</p>
+        </div>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <label>
-    Email
-    <input type="email" formControlName="email" placeholder="ex: user@empresa.com" />
-  </label>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">          
+          <div class="input-group">
+            <label>Email</label>
+            <div class="input-relative">
+              <mat-icon class="icon-left">mail</mat-icon>
+              <input 
+                type="email" 
+                formControlName="email"
+                placeholder="ex: user@empresa.com"
+                [class.error]="form.get('email')?.invalid && form.get('email')?.touched">
+            </div>
+          </div>
 
-  <button type="submit" [disabled]="form.invalid">Entrar (fake)</button>
+          <button type="submit" class="btn-submit" [disabled]="form.invalid">Entrar (fake)</button>
 
-  <p class="hint">Dica: use "admin&#64;..." para entrar como ADMIN.</p>
-</form>
+        </form>
+        <div class="tip-section">
+          <div class="tip-content">
+            <mat-icon class="icon-info">info</mat-icon>
+            <p>
+              <strong>Dica:</strong> use "admin&#64;..." para entrar como
+              <span class="badge-admin">ADMIN</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="card-footer">
+        <p>© 2024 Empresa. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+  </main>
+
+  <div class="bottom-gradient"></div>
+</div>

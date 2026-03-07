@@ -23,6 +23,10 @@ export class ReimbursementsService {
     return this.http.get<Reimbursement[]>(this.api);
   }
 
+  getAllByStatus(status: string): Observable<Reimbursement[]> {
+    return this.http.get<Reimbursement[]>(`${this.api}?status=${status}`);
+  }
+
   create(data: Partial<Reimbursement>): Observable<Reimbursement> {
     return this.http.post<Reimbursement>(this.api, data);
   }

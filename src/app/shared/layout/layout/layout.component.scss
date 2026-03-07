@@ -1,3 +1,15 @@
-.container {
-  padding: 24px;
+@import '../../../core/styles/colors';
+
+// Layout Body
+.layout-body {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+
+  @media (max-width: 1024px) { flex-direction: column; }
+}
+
+// Content Area
+.content-area {
+  flex-grow: 1;
 }
