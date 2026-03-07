@@ -23,29 +23,31 @@ O **Angular Expense Portal** é uma aplicação web moderna que facilita:
 - **Karma** (Unit Testing)
 
 ## 📁 Estrutura do Projeto
-src/
-├── app/
-│ ├── core/
-│ │ ├── guards/
-│ │ └── styles/
-│ │ └── _colors.scss
-│ ├── features/
-│ │ ├── reimbursements/
-│ │ │ ├── pages/
-│ │ │ │ └── reimbursement-list/
-│ │ │ │ ├── reimbursement-list.component.html
-│ │ │ │ ├── reimbursement-list.component.ts
-│ │ │ │ └── reimbursement-list.component.scss
-│ │ │ └── services/
-│ ├── shared/
-│ │ ├── layout/
-│ │ │ ├── navbar/
-│ │ │ │ ├── navbar.component.html
-│ │ │ │ ├── navbar.component.ts
-│ │ │ │ └── navbar.component.scss
-│ └── app.component.ts
-├── assets/
-└── styles/
+```bash
+  src/
+  ├── app/
+  │ ├── core/
+  │ │ ├── guards/
+  │ │ └── styles/
+  │ │ └── _colors.scss
+  │ ├── features/
+  │ │ ├── reimbursements/
+  │ │ │ ├── pages/
+  │ │ │ │ └── reimbursement-list/
+  │ │ │ │ ├── reimbursement-list.component.html
+  │ │ │ │ ├── reimbursement-list.component.ts
+  │ │ │ │ └── reimbursement-list.component.scss
+  │ │ │ └── services/
+  │ ├── shared/
+  │ │ ├── layout/
+  │ │ │ ├── navbar/
+  │ │ │ │ ├── navbar.component.html
+  │ │ │ │ ├── navbar.component.ts
+  │ │ │ │ └── navbar.component.scss
+  │ └── app.component.ts
+  ├── assets/
+  └── styles/
+```
 
 ## 🚀 Como Executar o Projeto
 
