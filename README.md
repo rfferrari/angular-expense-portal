@@ -82,11 +82,18 @@ Durante o desenvolvimento foi utilizado json-server para simular uma API REST.
 
 Para a versão publicada no Netlify, os dados são servidos através de arquivos JSON em /assets/mock.
 
+## Screenshots
+![Login](https://github.com/rfferrari/expense-portal/blob/main/docs/images/1-login.png)
+![Lista](https://github.com/rfferrari/expense-portal/blob/main/docs/images/2-lista.png)
+![Filtro](https://github.com/rfferrari/expense-portal/blob/main/docs/images/3-filtro.png)
+![Adicionar](https://github.com/rfferrari/expense-portal/blob/main/docs/images/4-adicionar.png)
+
+
+## Demo do projeto
+
+https://inspiring-cannoli-964e62.netlify.app/
+
 ## 📄 Licença
 Este projeto é de uso interno.
 
 Desenvolvido usando Angular 17
-
-## Deploy do projeto
-
-https://inspiring-cannoli-964e62.netlify.app/
