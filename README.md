@@ -91,7 +91,7 @@ Para a versão publicada no Netlify, os dados são servidos através de arquivos
 
 ## Demo do projeto
 
-https://inspiring-cannoli-964e62.netlify.app/
+[expense-portal](https://expense-portal.netlify.app/)
 
 ## 📄 Licença
 Este projeto é de uso interno.
